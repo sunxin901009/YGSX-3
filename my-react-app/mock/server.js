@@ -33,7 +33,11 @@ app.get('/fruit', function (req, res) {//水果、海鲜、肉类数据
 app.get('/classify', function (req, res) {//所有数据
     res.json(classify)
 });
-
+//eat页数据
+let eatSliders=require("./eat");
+app.get('/eat',function (req,res) {
+    res.json(eatSliders)
+})
 function cors() {
     return function (req, res, next) {
         res.header("Access-Control-Allow-Origin", "http://localhost:8000");
@@ -44,3 +48,4 @@ function cors() {
         next();
     }
 }
+
