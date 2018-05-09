@@ -1,0 +1,26 @@
+.tab-bar {
+  height: 53px;
+  background: #358ddf;
+  border: 1px solid #d5d5d5;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+}
+.tab-bar li {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.tab-bar li a {
+  display: block;
+}
+.tab-bar li a i {
+  display: block;
+}
+.tab-bar li a.active {
+  color: #fff;
+}
