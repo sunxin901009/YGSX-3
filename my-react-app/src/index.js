@@ -11,6 +11,7 @@ import Kind from 'src/page/Kind/Kind.js'
 import Eat from 'src/page/Eat/Eat.js'
 import Mine from 'src/page/Mine/Mine.js'
 import BuyCart from 'src/page/BuyCart/BuyCart.js'
+import List from "./page/Kind/Kind-detail";
 
 render(
     <Router history={history}>
@@ -23,6 +24,8 @@ render(
                         <Route path="/eat" component={Eat} />
                         <Route path="/mine" component={Mine} />
                         <Route path="/buycart" component={BuyCart} />
+                        <Route path="/list" component={List} />
+
                         <Redirect to='/home' component={Home} />
                     </Switch>
                     <TabBar></TabBar>
