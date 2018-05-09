@@ -24,7 +24,7 @@ export default class homeLittleList extends Component {
                             </div>
                         ))
                     }
-                    
+
                 </ul>
             </div>
         )

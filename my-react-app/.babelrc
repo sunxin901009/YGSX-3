@@ -1,8 +1,15 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> ba585cdae3e1811de50b7eed6435b737a85ba658
 {
   "presets": [
     "env",
     "stage-0",
     "react"
   ]
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> ba585cdae3e1811de50b7eed6435b737a85ba658
