@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom';
+
 import ReactSwipe from 'react-swipe';
 import axios from '../../api'
 import './index.less'
@@ -7,7 +8,7 @@ export default class Slider extends React.Component {
     state = {
         index: 0,
         slider:[]
-    }
+    };
     componentDidMount(){
         axios.get('/slider').then(data=>{
             this.setState({...this.state,slider:data})
@@ -18,7 +19,7 @@ export default class Slider extends React.Component {
             continuous: true, auto: 2000, transitionEnd: (index) => {
                 this.setState({ index })
             }
-        }
+        };
         return (
             <div className="home-swiper">
                 <ReactSwipe className="carousel" swipeOptions={ops}>

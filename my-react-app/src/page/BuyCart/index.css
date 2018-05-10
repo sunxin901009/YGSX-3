@@ -77,6 +77,126 @@ body {
   font-size: .5rem;
   color: #11b57c;
 }
+.cart-new .cart-listBox {
+  width: 100%;
+}
+.cart-new .cart-listBox .cartList li {
+  position: relative;
+  top: 3rem;
+  left: 0;
+  padding: .32rem 0 .32rem 1.22rem;
+  margin-bottom: 0.2rem;
+  border-bottom: 1px solid lavenderblush;
+}
+.cart-new .cart-listBox .cartList li .check {
+  position: absolute;
+  top: .32rem;
+  left: 0;
+  width: 1.22rem;
+  height: .54rem;
+  padding: 1.08rem 0;
+  text-align: center;
+}
+.cart-new .cart-listBox .cartList li img {
+  position: absolute;
+  left: 1.22rem;
+  top: .32rem;
+  width: 2.7rem;
+  height: 2.7rem;
+}
+.cart-new .cart-listBox .cartList li .text {
+  padding: 0 1.9rem 0 3rem;
+}
+.cart-new .cart-listBox .cartList li .text h2 {
+  height: 1.12rem;
+  line-height: .56rem;
+  font-size: .45rem;
+  font-weight: normal;
+}
+.cart-new .cart-listBox .cartList li .text span {
+  display: block;
+  height: .56rem;
+  padding: 0.2rem 0 0.1rem;
+}
+.cart-new .cart-listBox .cartList li .text p {
+  height: .72rem;
+  line-height: .72rem;
+  font-size: 11px;
+  color: #ff6353;
+}
+.cart-new .cart-listBox .cartList li .del {
+  position: absolute;
+  right: 0.8rem;
+  top: .23rem;
+  width: .48rem;
+  height: .5rem;
+  font-size: 0.82rem;
+  color: lightpink;
+}
+.cart-new .cart-listBox .cartList li .num {
+  position: absolute;
+  right: 0.6rem;
+  top: 1.8rem;
+  width: 2.6rem;
+  height: .62rem;
+}
+.cart-new .cart-listBox .cartList li .num span {
+  display: inline-block;
+  width: 0.72rem;
+  height: .62rem;
+  line-height: .62rem;
+  font-size: .52rem;
+  border: 1px solid #cccccc;
+  color: #808080;
+  text-align: center;
+}
+.cart-new .cart-listBox .computed {
+  position: fixed;
+  left: 0;
+  bottom: 50px;
+  width: 100%;
+  height: 1.6rem;
+  padding: 0 3.9rem 0 0;
+  box-sizing: border-box;
+  border-top: 1px solid #cccccc;
+  background: #fff;
+  z-index: 100;
+}
+.cart-new .cart-listBox .computed .check {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2.1rem;
+  height: .54rem;
+  padding: .53rem 0 .53rem .36rem;
+  font-size: 0.38rem;
+}
+.cart-new .cart-listBox .computed .text {
+  padding: .2rem 0;
+  line-height: .6rem;
+  font-size: 11px;
+  text-align: right;
+}
+.cart-new .cart-listBox .computed .text b {
+  color: red;
+}
+.cart-new .cart-listBox .computed .btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 3.6rem;
+  height: 1.6rem;
+}
+.cart-new .cart-listBox .computed .btn a {
+  display: block;
+  width: 3.6rem;
+  height: 1.6rem;
+  background: #ff6353;
+  line-height: 1.6rem;
+  font-size: .5rem;
+  color: #fff;
+  text-align: center;
+}
 .cart-new .buyFooter {
   position: relative;
   top: 3rem;

@@ -60,7 +60,36 @@
   height: 100px;
   margin: 20px auto;
 }
-<<<<<<< HEAD
+.fruits .carousel {
+  position: fixed;
+  left: 0;
+  top: 50px;
+}
+.fruits .carousel img {
+  width: 100%;
+  height: 180px;
+}
+.fruits .home-swiper {
+  position: relative;
+}
+.fruits .home-swiper .dots {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+.fruits .home-swiper .dots span {
+  display: inline-block;
+  width: 20px;
+  height: 8px;
+  border-radius: 4px;
+  margin: 5px;
+  background: white;
+}
+.fruits .home-swiper .dots span.active {
+  background: lawngreen;
+}
 .fruits ul {
   overflow: hidden;
   margin-left: 20px;
@@ -150,5 +179,3 @@
   text-align: center;
   line-height: 30px;
 }
-=======
->>>>>>> 5fdde48b3130c0baa58526f444389fb96b2acf80
