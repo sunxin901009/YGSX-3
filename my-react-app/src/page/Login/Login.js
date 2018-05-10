@@ -1,30 +1,31 @@
 import React, { Component } from 'react';
-// import {render} from 'react-dom'
+
 import {Link} from 'react-router-dom';
 
 import './Login.less'
 export default class Login extends Component {
+
     render(){
         return(
             <div className='Login'>
                 <form className='input-ite'>
                     <div className="input-item">
                         <div className="input-item-list">
-                            <input className='input-item-lis' type="tel" placeholder="请输入您的手机号" />
+                            <input  className='input-item-li' type="tel" placeholder="请输入您的手机号" />
 
                                 <a className="btn-captcha" href="javascript:void(0)">获取验证码</a>
                         </div>
                         <div className="input-item-list">
-                            <input className='input-item-lis' type="text" placeholder="请输入您的验证码"/>
+                            <input  className='input-item-lis' type="text" placeholder="请输入您的验证码"/>
                         </div>
                         <div className="input-item-list">
-                            <input className='input-item-lis' type="password" placeholder="请设定您的密码"/>
+                            <input  className='input-item-lis' type="password" placeholder="请设定您的密码"/>
                         </div>
                         <div className="input-item-list">
-                            <input className='input-item-lis' type="password" placeholder="请再次输入您的密码"/>
+                            <input  className='input-item-lis' type="password" placeholder="请再次输入您的密码"/>
                         </div>
                         <div className="input-item-list">
-                            <input className='input-item-lis' type="text" placeholder="注册邀请码（选填）"/>
+                            <input  className='input-item-lis' type="text" placeholder="注册邀请码"/>
                         </div>
                     </div>
                     <div className="btn-login">
