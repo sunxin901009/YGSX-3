@@ -1,39 +1,32 @@
-import React from 'react'
-import ReactDOM from 'react-dom';
+import React, { Component } from 'react';
 import ReactSwipe from 'react-swipe';
-import axios from '../../api'
-import './index.less'
-export default class Slider extends React.Component {
+import 'swipe-js-iso';
+export default class Slider extends Component {
     state = {
-        index: 0,
-        slider:[]
-    }
-    componentDidMount(){
-        axios.get('/slider').then(data=>{
-            this.setState({...this.state,slider:data})
-        })
+        index:0
     }
     render() {
-        let ops = {
-            continuous: true, auto: 2000, transitionEnd: (index) => {
-                this.setState({ index })
+        let opts = {
+            continuous: true, auto: 1000, callback: (index) => {
+                this.setState({index});
             }
         }
-        return (
-            <div className="home-swiper">
-                <ReactSwipe className="carousel" swipeOptions={ops}>
-                    {this.state.slider.map((item, index) => (
-                        <div key={index}>
-                            <img src={item} alt="" />
-                        </div>
-                    ))}
-                </ReactSwipe>
-                <div className="dots">
-                    {this.state.slider.map((item, index) => (
-                        <span key={index} className={index === this.state.index ? 'active' : ''}></span>
-                    ))}
-                </div>
+        return (<div className="home-swiper">
+
+
+            <ReactSwipe className="carousel" swipeOptions={opts}>
+                {this.props.lists.map((item, index) => (
+
+                    <div key={index}>
+                        <img src={item} alt=""/>
+                    </div>
+                ))}
+            </ReactSwipe>
+            <div className="dots">
+                {this.props.lists.map((item, index) => (
+                    <span key={index} className={index===this.state.index?'active':''}></span>
+                ))}
             </div>
-        );
+        </div>)
     }
 }

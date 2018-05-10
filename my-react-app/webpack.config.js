@@ -22,7 +22,9 @@ module.exports = {
     ],
     devServer: {
 
-        port:8000,
+
+
+    port:8000,
 
         //实现支持browser路由
         historyApiFallback:true,
