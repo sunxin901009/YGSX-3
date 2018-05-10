@@ -3,6 +3,7 @@ import {router,Link} from 'react-router-dom';
 import TabBar from '../../components/TabBar/TabBar';
 // import Detail from "./Kind-detail";
 import axios from "../../api/index"
+import List from './List'
 export default class Kind extends Component {
     constructor(){
         super();
@@ -26,7 +27,7 @@ export default class Kind extends Component {
                 </div>
                 <div  className="kind-nav">
                     <ul>
-                        <li className="action">进口水果</li>
+                        <li className="active">进口水果</li>
                         <li>国产水果</li>
                         <li>精选肉类</li>
                         <li>禽类蛋品</li>
@@ -39,19 +40,7 @@ export default class Kind extends Component {
                         <li>饮料酒水</li>
                         <li>礼品礼券</li>
                     </ul>
-                    <div className="kind-list">
-                        {
-                            this.state.fruit.map((item,index)=>(
-                                <Link to="/kind/list"
-                                    className="photograph"
-                                     key={index}
-                                >
-                                    <img src={item.url} alt=""/>
-                                    {item.name}
-                                </Link>
-                            ))
-                        }
-                    </div>
+                    <List fruit={this.state.fruit}/>
                     <TabBar/>
                 </div>
             </div>
