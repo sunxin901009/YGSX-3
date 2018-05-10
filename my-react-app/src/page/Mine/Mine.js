@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import {NavLink} from 'react-router-dom'
 import './Mine.css'
-import Disembark from './../Disembark/Disembark';
 let a=require('./img/1.jpg');
-// let b=require('./img/2.png');
-class Mine extends Component {
+export default class Mine extends Component {
     constructor() {
         super();
     }
@@ -80,4 +78,5 @@ class Mine extends Component {
             </div>)
     }
 }
-export default Mine;
+
+

@@ -1,13 +1,14 @@
-let express = require('express')
+let express = require('express');
 let app = express();
-let bodyParser = require('body-parser')
-let session = require('express-session')
-let fs = require('fs')
+let bodyParser = require('body-parser');
+let session = require('express-session');
+let fs = require('fs');
 app.listen(3000);
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 app.use(cors());
 
 let sliders = require('./home/sliders');
+let Disembark=require('./Disembark/Disembark');
 let fruits = require('./home/fruits');
 let kinds = require('./home/kinds');
 let fruitsList = require('./home/fruitList');
@@ -17,6 +18,7 @@ let classify = require('./classify/fruits');
 app.get('/slider', function (req, res) {//轮播图
     res.json(sliders)
 });
+
 app.get('/kinds', function (req, res) {//种类
     res.json(kinds)
 });
@@ -38,6 +40,10 @@ app.get('/classify', function (req, res) {//所有数据
 let eatSliders = require("./eat");
 app.get('/eat', function (req, res) {
     res.json(eatSliders)
+})
+//登录 数据
+app.get('./Disembark',function(req,res){
+    res.json(Disembark)
 })
 //add 到购物车数据
 app.get('/add', function (req, res) {

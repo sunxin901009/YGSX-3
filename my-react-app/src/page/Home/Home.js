@@ -1,6 +1,20 @@
 import ReactDom from 'react-dom';
 import React, { Component } from 'react';
-import { render } from 'react-dom';
+
+
+
+
+
+
+
+
+
+export default class Home extends Component {
+
+    render(){
+        return(
+
+
 import Header from './Header';
 import Slider from './Slider';
 import HomeLittleList from './HomeLittleList';
@@ -9,34 +23,36 @@ import RunRight from './RunRight';
 import BotList from './BotList';
 import GoTop from './GoTop';
 import './Home.less';
-import axios from '../../api';
+
 import { getSlider } from "../../api/home";
 export default class Home extends Component {
     constructor() {
         super();
-        this.state = { slider: [] }
+        this.state = {slider: []}
     }
+
     getData = () => {
         getSlider().then((data) => {
-            this.setState({ slider: data });
+            this.setState({slider: data});
         });
     };
+
     componentDidMount() {
         this.getData();
     }
+
     render() {
         return (
             <div>
-                <Header />
+                <Header/>
 
                 {this.state.slider.length > 0 ?
-                    <Slider lists={this.state.slider} /> : "加载中"}
-                <HomeLittleList />
-                <RunLeft />
-                <RunRight />
-                <BotList />
-                <GoTop />
+                    <Slider lists={this.state.slider}/> : "加载中"}
+                <HomeLittleList/>
+                <RunLeft/>
+                <RunRight/>
+                <BotList/>
+                <GoTop/>
             </div>
         )
-    }
-}
+    }}

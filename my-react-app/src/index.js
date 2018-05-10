@@ -1,19 +1,20 @@
 
 import React, { Component } from 'react'
 import { render } from 'react-dom'
-import TabBar from 'src/components/TabBar/TabBar'
+
+
+import { Router, Route, Switch, Link, Redirect } from 'react-router-dom'
+import TabBar from './components/TabBar/TabBar'
 import { Router, Route, Switch, Link, Redirect } from 'react-router-dom'
 import history from './history'
-import Home from 'src/page/Home/Home.js'
-import Kind from 'src/page/Kind/Kind.js'
-import Eat from 'src/page/Eat/Eat.js'
-import Mine from 'src/page/Mine/Mine.js'
-import BuyCart from 'src/page/BuyCart/BuyCart.js'
-import Disembark from 'src/page/Disembark/Disembark.js'
-import Login from 'src/page/Login/Login.js'
+import Home from './page/Home/Home.js'
+import Kind from './page/Kind/Kind.js'
+import Eat from './page/Eat/Eat.js'
+import Mine from './page/Mine/Mine.js'
+import BuyCart from './page/BuyCart/BuyCart.js'
+import Disembark from './page/Disembark/Disembark.js'
+import Login from './page/Login/Login.js'
 import List from "./page/Kind/Kind-detail";
-
-
 
 render(
     <Router history={history}>
@@ -21,14 +22,15 @@ render(
             render={({ location }) => (
                 <React.Fragment>
                     <Switch>
+
                         <Route path="/home" component={Home} />
                         <Route path="/kind" component={Kind} />
                         <Route path="/eat" component={Eat} />
                         <Route path="/mine" component={Mine} />
-                        <Route path="/disembark" component={Disembark} />
-                        <Route path="/login" component={Login} />
                         <Route path="/buycart" component={BuyCart} />
                         <Route path="/list" component={List} />
+                        <Route path="/login" component={Login} />
+                        <Route path="/disembark" component={Disembark} />
                         <Redirect to='/home' component={Home} />
                     </Switch>
                     <TabBar></TabBar>
