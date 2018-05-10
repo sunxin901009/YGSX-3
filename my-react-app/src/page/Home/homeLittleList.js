@@ -1,7 +1,9 @@
 
 import React, { Component } from 'react';
 import {render} from 'react-dom'
-import axios from '../../../node_modules/axios/dist/axios'
+import axios from '../../api/index'
+
+
 export default class homeLittleList extends Component {
     constructor(){
         super();
@@ -9,23 +11,27 @@ export default class homeLittleList extends Component {
     }
     componentDidMount(){
 
-        axios.get('').then(data=>{
-            this.setState({state:data})
-        })
+        axios.get('/kinds').then(data=>{
+            this.setState({fruit:data});
+        });
+
     }
     render(){
         return(
-            <div className=''>
+            <div className='fruits'>
                 <ul>
                     {
                         this.state.fruit.map((item,index)=>(
-                            <div>
-
-                            </div>
+                            <li key={index} className='oli'>
+                                <img src={item.url} alt=""/>
+                                <p>{item.title}</p>
+                            </li>
                         ))
                     }
 
                 </ul>
+                <img className='two' src="http://img11.yiguoimg.com/d/items/2018/180506/9288722620425382_1125x652.jpg?w=1125&h=652"
+                     alt=""/>
             </div>
         )
     }
