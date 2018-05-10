@@ -3,7 +3,6 @@ import { render } from 'react-dom'
 import TabBar from 'src/components/TabBar/TabBar'
 import { Router, Route, Switch, Link, Redirect } from 'react-router-dom'
 
-import './page/Home'
 import history from './history'
 
 import Home from 'src/page/Home/Home.js'
@@ -11,17 +10,10 @@ import Kind from 'src/page/Kind/Kind.js'
 import Eat from 'src/page/Eat/Eat.js'
 import Mine from 'src/page/Mine/Mine.js'
 import BuyCart from 'src/page/BuyCart/BuyCart.js'
-<<<<<<< HEAD
 import Disembark from 'src/page/Disembark/Disembark.js'
 import Login from 'src/page/Login/Login.js'
-
-=======
 import List from "./page/Kind/Kind-detail";
-<<<<<<< HEAD
-=======
->>>>>>> 5fdde48b3130c0baa58526f444389fb96b2acf80
->>>>>>> 83d12652aeda87baa64748a8274cba54be223550
->>>>>>> e0258defcd780f58ab239181690ccf8cc5771539
+
 
 render(
     <Router history={history}>
