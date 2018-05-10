@@ -1,10 +1,9 @@
+
 import React, { Component } from 'react'
 import { render } from 'react-dom'
 import TabBar from 'src/components/TabBar/TabBar'
 import { Router, Route, Switch, Link, Redirect } from 'react-router-dom'
-
 import history from './history'
-
 import Home from 'src/page/Home/Home.js'
 import Kind from 'src/page/Kind/Kind.js'
 import Eat from 'src/page/Eat/Eat.js'
@@ -13,6 +12,7 @@ import BuyCart from 'src/page/BuyCart/BuyCart.js'
 import Disembark from 'src/page/Disembark/Disembark.js'
 import Login from 'src/page/Login/Login.js'
 import List from "./page/Kind/Kind-detail";
+
 
 
 render(
