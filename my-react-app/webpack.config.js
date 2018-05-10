@@ -21,7 +21,11 @@ module.exports = {
         new webpack.HotModuleReplacementPlugin()
     ],
     devServer: {
-        port:8000,
+
+
+
+    port:8000,
+
         //实现支持browser路由
         historyApiFallback:true,
         //热更新
@@ -36,4 +40,4 @@ module.exports = {
         ]
     },
 
-}
+};

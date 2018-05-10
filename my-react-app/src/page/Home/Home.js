@@ -1,37 +1,57 @@
-
 import ReactDom from 'react-dom';
 import React, { Component } from 'react';
-import {render} from 'react-dom';
+
+
+
+
+
+
+
+
+
+export default class Home extends Component {
+
+    render(){
+        return(
+
+
 import Header from './Header';
-import  Slider from './Slider';
+import Slider from './Slider';
 import HomeLittleList from './HomeLittleList';
-import  RunLeft from './RunLeft';
-import  RunRight from './RunRight';
+import RunLeft from './RunLeft';
+import RunRight from './RunRight';
 import BotList from './BotList';
 import GoTop from './GoTop';
 import './Home.less';
-import axios from '../../api';
-import {getSlider} from "../../api/home";
+
+import { getSlider } from "../../api/home";
 export default class Home extends Component {
-    constructor(){
+    constructor() {
         super();
-        this.state={slider:[]}
+        this.state = {slider: []}
     }
-    getData=()=>{
+
+    getData = () => {
         getSlider().then((data) => {
-            this.setState({slider:data});
+            this.setState({slider: data});
         });
     };
+
     componentDidMount() {
         this.getData();
     }
-    render(){
-        return(
+
+    render() {
+        return (
             <div>
                 <Header/>
+<<<<<<< HEAD
                 <div className='content'>
+=======
+
+>>>>>>> 453ae0dcda8bfb8564d82cb3193ad403cde8a78e
                 {this.state.slider.length > 0 ?
-                    <Slider lists={this.state.slider} /> : "加载中"}
+                    <Slider lists={this.state.slider}/> : "加载中"}
                 <HomeLittleList/>
                 <RunLeft/>
                 <RunRight/>
@@ -40,5 +60,4 @@ export default class Home extends Component {
                 </div>
             </div>
         )
-    }
-}
+    }}
