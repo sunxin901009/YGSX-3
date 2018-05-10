@@ -1,20 +1,19 @@
 
-
 import React, { Component } from 'react'
 import { render } from 'react-dom'
-
-
 import TabBar from 'src/components/TabBar/TabBar'
 import { Router, Route, Switch, Link, Redirect } from 'react-router-dom'
+import './page/Home'
 import history from './history'
 import Home from 'src/page/Home/Home.js'
 import Kind from 'src/page/Kind/Kind.js'
 import Eat from 'src/page/Eat/Eat.js'
 import Mine from 'src/page/Mine/Mine.js'
 import BuyCart from 'src/page/BuyCart/BuyCart.js'
+import Disembark from 'src/page/Disembark/Disembark.js'
+import Login from 'src/page/Login/Login.js'
+
 import List from "./page/Kind/Kind-detail";
-
-
 render(
     <Router history={history}>
         <Route
@@ -25,6 +24,8 @@ render(
                         <Route path="/kind" component={Kind} />
                         <Route path="/eat" component={Eat} />
                         <Route path="/mine" component={Mine} />
+                        <Route path="/disembark" component={Disembark} />
+                        <Route path="/login" component={Login} />
                         <Route path="/buycart" component={BuyCart} />
                         <Route path="/list" component={List} />
                         <Redirect to='/home' component={Home} />
