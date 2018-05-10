@@ -11,7 +11,8 @@ export default class Slider extends Component {
                 this.setState({index});
             }
         }
-        return (<div className="home-swiper">
+        return (<div>
+            <div className="home-swiper">
 
 
             <ReactSwipe className="carousel" swipeOptions={opts}>
@@ -26,6 +27,11 @@ export default class Slider extends Component {
                 {this.props.lists.map((item, index) => (
                     <span key={index} className={index===this.state.index?'active':''}></span>
                 ))}
+            </div>
+
+        </div>
+            <div className="AD">
+            <img src="http://img12.yiguoimg.com/d/items/2018/180509/9710935250281641_1125x344.gif?w=1125&h=344" alt=""/>
             </div>
         </div>)
     }

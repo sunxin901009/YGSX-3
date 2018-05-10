@@ -12,6 +12,7 @@ import Mine from 'src/page/Mine/Mine.js'
 import BuyCart from 'src/page/BuyCart/BuyCart.js'
 import Disembark from 'src/page/Disembark/Disembark.js'
 import Login from 'src/page/Login/Login.js'
+import Fruits from 'src/page/Lists/Fruits.js'
 
 import List from "./page/Kind/Kind-detail";
 render(
@@ -28,6 +29,7 @@ render(
                         <Route path="/login" component={Login} />
                         <Route path="/buycart" component={BuyCart} />
                         <Route path="/list" component={List} />
+                        <Route path="/fruits" component={Fruits}/>
                         <Redirect to='/home' component={Home} />
                     </Switch>
                     <TabBar></TabBar>

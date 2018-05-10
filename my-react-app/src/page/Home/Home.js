@@ -29,6 +29,7 @@ export default class Home extends Component {
         return(
             <div>
                 <Header/>
+                <div className='content'>
                 {this.state.slider.length > 0 ?
                     <Slider lists={this.state.slider} /> : "加载中"}
                 <HomeLittleList/>
@@ -36,6 +37,7 @@ export default class Home extends Component {
                 <RunRight/>
                 <BotList/>
                 <GoTop/>
+                </div>
             </div>
         )
     }

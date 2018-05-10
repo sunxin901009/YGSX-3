@@ -2,6 +2,8 @@
 import React, { Component } from 'react';
 import {render} from 'react-dom'
 import axios from '../../api/index'
+import {Link} from 'react-router-dom';
+import '../Lists/Fruits';
 
 
 export default class homeLittleList extends Component {
@@ -23,8 +25,11 @@ export default class homeLittleList extends Component {
                     {
                         this.state.fruit.map((item,index)=>(
                             <li key={index} className='oli'>
-                                <img src={item.url} alt=""/>
-                                <p>{item.title}</p>
+
+                                <Link to='/fruits'>
+                                    <img src={item.url} alt=""/>
+                                    <p>{item.title}</p>
+                                </Link>
                             </li>
                         ))
                     }

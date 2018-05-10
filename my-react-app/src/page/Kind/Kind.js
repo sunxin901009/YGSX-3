@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {router,Link} from 'react-router-dom';
 import TabBar from '../../components/TabBar/TabBar';
-// import Detail from "./Kind-detail";
+// import Lists from "./Kind-detail";
 import axios from "../../api/index"
 export default class Kind extends Component {
     constructor(){
