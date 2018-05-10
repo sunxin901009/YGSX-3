@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-// import {render} from 'react-dom'
 import {Link} from 'react-router-dom';
-
 import './Disembark.less'
+
+
 export default class Disembark extends Component {
     render(){
+        console.log(1);
         return(
+
             <div className='disembark'>
                 <form>
                     <div className="input-item">
