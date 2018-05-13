@@ -8,11 +8,11 @@ app.use(bodyParser.json());
 app.use(cors());
 
 let sliders = require('./home/sliders');
-let Disembark=require('./Disembark/Disembark');
 let fruits = require('./home/fruits');
 let kinds = require('./home/kinds');
 let fruitsList = require('./home/fruitList');
 let classify = require('./classify/fruits');
+
 
 //首页数据
 app.get('/slider', function (req, res) {//轮播图
@@ -42,38 +42,57 @@ app.get('/eat', function (req, res) {
     res.json(eatSliders)
 })
 //登录 数据
-app.get('./Disembark',function(req,res){
+app.get('./Disembark', function (req, res) {
     res.json(Disembark)
 })
 //add 到购物车数据
+
 app.get('/add', function (req, res) {
     let { id } = req.query;
-    let current = fruits.filter(item => item.id == id);
     let data = fs.readFileSync('./buycart/buycart.js', 'utf8');
     let newData = JSON.parse(data);
-    let cur=newData.findIndex(item=>item.id==id);
-    console.log(cur);
-    if(cur===-1){
+    let current = fruits.filter(item => item.id == id);
+    let cur = newData.findIndex(item => item.id == id);
+    //console.log(cur,id);
+    if (cur === -1) {
         newData.push(current[0])
-<<<<<<< HEAD
 
-    }else{
-        current[0]['number']++;
+    } else {
+        current[0]['number'] += 1;
+        newData = newData.map(item => {
+            if (item.id == current[0]['id']) {
+                item = current[0]
+            }
+            return item
+        })
     }
 
     fs.writeFileSync('./buycart/buycart.js', JSON.stringify(newData));
-    let cartData=fs.readFileSync('./buycart/buycart.js','utf8');
-=======
-        
-    }else{
-        current[0]['number']++;
-    }
-    
-    fs.writeFileSync('./buycart/buycart.js', JSON.stringify(newData));
-    let cartData=fs.readFileSync('./buycart/buycart.js','utf8')
->>>>>>> 96953a86fd16ff93535135335b13981722493a0a
-    res.json(cartData)
+    // let cartData = fs.readFileSync('./buycart/buycart.js', 'utf8')
+    res.json(current[0])
 });
+//minus 商品数量
+app.get('/minus', function (req, res) {
+    let { id } = req.query;
+    let data = fs.readFileSync('./buycart/buycart.js', 'utf8');
+    let newData = JSON.parse(data);
+    let current = newData.filter(item => item.id == id);
+    newData = newData.map(item => {
+        if (item.id == id) {
+            console.log(1);
+            current[0]['number'] -= 1;
+            if (current[0]['number'] <= 0) {
+                console.log(2);
+                current[0]['number'] = 0
+            }
+            item = current[0];
+        }
+        return item
+    })
+    fs.writeFileSync('./buycart/buycart.js', JSON.stringify(newData));
+    //let cartData = fs.readFileSync('./buycart/buycart.js', 'utf8')
+    res.json(current[0])
+})
 //delete 购物车数据
 app.get('/delete', function (req, res) {
     let { id } = req.query;
@@ -84,15 +103,10 @@ app.get('/delete', function (req, res) {
         return;
     }
     let newData = data.filter(item => item.id != id);
-<<<<<<< HEAD
-    console.log(id,newData);
-=======
->>>>>>> 96953a86fd16ff93535135335b13981722493a0a
     fs.writeFileSync('./buycart/buycart.js', JSON.stringify(newData));
-    let cartData=fs.readFileSync('./buycart/buycart.js','utf8')
+    let cartData = fs.readFileSync('./buycart/buycart.js', 'utf8')
     res.json(cartData)
 });
-
 //buycart数据
 app.get('/buycart', function (req, res) {
     let data = fs.readFileSync('./buycart/buycart.js', 'utf8')

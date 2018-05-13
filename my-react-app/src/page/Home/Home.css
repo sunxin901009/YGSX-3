@@ -23,3 +23,14 @@
 .home-swiper .dots span.active {
   background: red;
 }
+.content {
+  position: fixed;
+  left: 0;
+  top: 56px;
+  right: 0;
+  bottom: 53px;
+  overflow: scroll;
+}
+.AD img {
+  width: 100%;
+}

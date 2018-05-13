@@ -1,8 +1,11 @@
 import React,{Component} from "react";
-
+import buyList from "../../api/buyList";
+import add from "../../api/buyAdd";
+import Counter from "src/page/BuyCart/counter";
+import {Link} from "react-router-dom";
 
 export default class CartList extends Component{
-    constructor(props){
+    constructor(props) {
         super();
     }
     render(){
@@ -12,7 +15,9 @@ export default class CartList extends Component{
                     <ul>
                         {this.props.buyCart.map((item,index)=>(
                             <li key={index}>
-                                <div className="check"></div>
+                                <div className="check">
+                                    <i></i>
+                                </div>
                                 <div className="img">
                                     <img src={item.url} alt=""/>
                                 </div>
@@ -22,11 +27,7 @@ export default class CartList extends Component{
                                     <p>￥{item.price}</p>
                                 </div>
                                 <div className="del iconfont icon-shanchu" onClick={()=>this.props.remove(item.id)}></div>
-                                <div className="num">
-                                    <span>-</span>
-                                    <span>1</span>
-                                    <span>+</span>
-                                </div>
+                               <Counter id={item.id}/>
                             </li>
                         ))}
                     </ul>
@@ -40,7 +41,9 @@ export default class CartList extends Component{
                         <p>
                             合计(不含运费)：
                             <b>
-                                ￥:
+                                ￥:{this.props.buyCart.reduce((prev, next) => {
+                                    return prev + next.price*this.props.buyCart.length
+                            }, 0)}
                             </b>
                         </p>
                         <span>
@@ -48,11 +51,9 @@ export default class CartList extends Component{
                             0.00
                         </span>
                     </div>
-                    <div className="btn">
-                        <a href="javascript:;">
-                            去结算(3)
-                        </a>
-                    </div>
+                    <Link to="/Disembark" className="btn">
+                            去结算({this.props.buyCart.length})
+                    </Link>
                 </div>
             </div>
         )

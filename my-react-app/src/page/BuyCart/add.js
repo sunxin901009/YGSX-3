@@ -1,4 +1,5 @@
 import React,{Component} from "react";
+import {Link} from "react-router-dom";
 
 export default class CartBox extends Component{
     render(){
@@ -7,7 +8,9 @@ export default class CartBox extends Component{
                 <div className="cart-icon iconfont icon-cart"></div>
                 <p>购物车空空的，快去逛逛吧！</p>
                 <div className="cart-btn">
-                    <a href="javascript:;">去逛逛</a>
+                    <Link to="/Home">
+                        去逛逛
+                    </Link>
                 </div>
             </div>
         )

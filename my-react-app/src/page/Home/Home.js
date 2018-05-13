@@ -1,20 +1,6 @@
 import ReactDom from 'react-dom';
 import React, { Component } from 'react';
 
-
-
-
-
-
-
-
-
-export default class Home extends Component {
-
-    render(){
-        return(
-
-
 import Header from './Header';
 import Slider from './Slider';
 import HomeLittleList from './HomeLittleList';
@@ -40,16 +26,11 @@ export default class Home extends Component {
     componentDidMount() {
         this.getData();
     }
-
     render() {
         return (
             <div>
                 <Header/>
-<<<<<<< HEAD
                 <div className='content'>
-=======
-
->>>>>>> 453ae0dcda8bfb8564d82cb3193ad403cde8a78e
                 {this.state.slider.length > 0 ?
                     <Slider lists={this.state.slider}/> : "加载中"}
                 <HomeLittleList/>
@@ -60,4 +41,5 @@ export default class Home extends Component {
                 </div>
             </div>
         )
-    }}
+    }
+}
